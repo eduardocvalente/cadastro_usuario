@@ -1,0 +1,43 @@
+<%- include('includes/head');%>
+    <%- include('includes/nav');%>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+
+                <div class="col-lg-8 my-3">
+                    <h1 class="text-center">Desafio colchete:</h1>
+                    <p class="text-justify lead">Dizemos que uma sequência de colchetes é válida se as seguintes
+                        condições forem atendidas:
+                        <br>● Não contém colchetes sem correspondência.</br>
+                        ●O subconjunto de colchetes dentro dos limites de um par de colchetes correspondente é
+                        também um par de colchetes.</br>
+                        Exemplos:</br>
+                        ● (){}[] é válido</br>
+                        ● [{()}](){} é válido</br>
+                        ● []{() não é válido</br>
+                        ● [{)] não é válido</br>
+                    </br>
+                    </p>
+
+                    <%- include('includes/messages') %>
+
+
+                        <form  method="post">
+                            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+
+                            <div class="form-group">
+                                <label>Insira a sequência de colchetes:</label>
+                                <input type="text" class="form-control" name="colchete">
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary">Validar</button>
+                        </form>
+                </div>
+                 
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+
+        <%- include('includes/footer');%>
